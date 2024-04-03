@@ -36,7 +36,7 @@ def create_event():
 # get all events
 @app.route('/events', methods=['GET'])
 def get_events():
-    events = Event.query.order_by(Event.id.asc()).all()
+    events = Event.query.order_by(Event.created_at.asc()).all()
     event_list = []
     for event in events:
         event_list.append(format_event(event))
